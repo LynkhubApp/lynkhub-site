@@ -7,57 +7,59 @@
 <meta name="description" content="Lynk Hub — неофициальная плавающая панель для головного устройства Lynk &amp; Co 900: музыка, Алиса, VPN, приложения, спидометр, пробег и поездки.">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <style>
-  :root {
-    --bg: #0e0e10; --card: #18181c; --text: #f2f2f4; --dim: #a6a6b0;
-    --accent: #ffbe46; --line: #26262c;
-  }
-  * { box-sizing: border-box; }
-  body { margin: 0; background: var(--bg); color: var(--text);
-    font: 17px/1.55 -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
-  .wrap { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
-  header { padding: 64px 0 40px; display: flex; gap: 28px; align-items: center; flex-wrap: wrap; }
-  header img { width: 104px; height: 104px; border-radius: 24px; }
-  h1 { font-size: 46px; line-height: 1.1; margin: 0 0 8px; letter-spacing: -0.5px; }
-  .lead { color: var(--dim); font-size: 20px; margin: 0; max-width: 620px; }
-  .cta { display: flex; gap: 14px; flex-wrap: wrap; margin: 8px 0 56px; }
-  .btn { display: inline-block; padding: 15px 24px; border-radius: 14px; font-weight: 600;
-    text-decoration: none; font-size: 17px; }
-  .android { color: var(--dim); font-size: 15px; margin: -40px 0 56px; }
-  .btn.main { background: var(--accent); color: #111; }
-  .btn.ghost { border: 1px solid var(--line); color: var(--text); }
-  h2 { font-size: 28px; margin: 0 0 20px; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-bottom: 64px; }
-  .card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 22px; }
-  .card h3 { margin: 0 0 6px; font-size: 19px; }
-  .card p { margin: 0; color: var(--dim); }
-  .card.net { margin: -40px 0 64px; }
-  .card .ic { font-size: 26px; margin-bottom: 10px; }
-  ol.steps { counter-reset: s; list-style: none; padding: 0; margin: 0 0 64px; display: grid; gap: 12px; }
-  ol.steps li { counter-increment: s; background: var(--card); border: 1px solid var(--line);
-    border-radius: 16px; padding: 18px 20px 18px 64px; position: relative; }
-  ol.steps li::before { content: counter(s); position: absolute; left: 18px; top: 16px; width: 32px; height: 32px;
-    border-radius: 50%; background: var(--accent); color: #111; font-weight: 700; display: grid; place-items: center; }
-  .note { color: var(--dim); font-size: 15px; border-top: 1px solid var(--line); padding: 28px 0 48px; }
-  .note p { margin: 0 0 8px; }
-  @media (max-width: 560px) { h1 { font-size: 36px; } header { padding-top: 40px; } }
+  :root { --bg:#0e0e10; --card:#18181c; --text:#f2f2f4; --dim:#a6a6b0; --accent:#ffbe46; --line:#26262c; }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);
+    font:17px/1.55 -apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;}
+  a{color:inherit}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 20px;}
+  /* shared brand bar */
+  .brand{display:flex;align-items:center;gap:12px;padding:24px 0;text-decoration:none;color:var(--text);width:max-content}
+  .brand img{width:44px;height:44px;border-radius:12px}
+  .brand span{font-size:22px;font-weight:700;letter-spacing:-0.3px}
+  /* shared footer */
+  footer{border-top:1px solid var(--line);margin-top:8px;padding:28px 0 56px;color:var(--dim);font-size:15px}
+  footer .links{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:16px}
+  footer a{color:var(--text);text-decoration:none}
+  footer p{margin:0 0 8px}
+  /* home hero + sections */
+  .hero{padding:16px 0 40px}
+  h1{font-size:46px;line-height:1.1;margin:0 0 10px;letter-spacing:-0.5px}
+  .lead{color:var(--dim);font-size:20px;margin:0;max-width:620px}
+  .cta{display:flex;gap:14px;flex-wrap:wrap;margin:26px 0 10px}
+  .btn{display:inline-block;padding:15px 24px;border-radius:14px;font-weight:600;text-decoration:none;font-size:17px}
+  .btn.main{background:var(--accent);color:#111}
+  .btn.ghost{border:1px solid var(--line);color:var(--text)}
+  .android{color:var(--dim);font-size:15px;margin:14px 0 52px}
+  h2{font-size:28px;margin:0 0 20px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-bottom:56px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+  .card h3{margin:0 0 6px;font-size:19px}
+  .card p{margin:0;color:var(--dim)}
+  .card.net{margin-bottom:56px}
+  .card .ic{font-size:26px;margin-bottom:10px}
+  ol.steps{counter-reset:s;list-style:none;padding:0;margin:0 0 56px;display:grid;gap:12px}
+  ol.steps li{counter-increment:s;background:var(--card);border:1px solid var(--line);
+    border-radius:16px;padding:18px 20px 18px 64px;position:relative}
+  ol.steps li::before{content:counter(s);position:absolute;left:18px;top:16px;width:32px;height:32px;
+    border-radius:50%;background:var(--accent);color:#111;font-weight:700;display:grid;place-items:center}
+  @media (max-width:560px){h1{font-size:36px}}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <header>
-    <img src="icon.svg" alt="">
-    <div>
-      <h1>Lynk Hub</h1>
-      <p class="lead">Плавающая панель для головного устройства Lynk &amp; Co 900: самое нужное в дороге — в одном касании, крупно и по-русски.</p>
-    </div>
-  </header>
+  <a class="brand" href="/"><img src="icon.svg" alt=""><span>Lynk Hub</span></a>
 
-  <div class="cta">
-    <a class="btn main" href="https://reports.lynkhub.ru:8443/dl/LynkHubInstaller.apk">Скачать установщик для Android</a>
-    <a class="btn ghost" href="#install">Как установить</a>
-    <a class="btn ghost" href="https://t.me/lynkhubapp">Канал в Telegram</a>
+  <div class="hero">
+    <h1>Панель для Lynk &amp; Co 900</h1>
+    <p class="lead">Самое нужное в дороге — в одном касании, крупно и по-русски. Неофициальное приложение.</p>
+    <div class="cta">
+      <a class="btn main" href="https://reports.lynkhub.ru:8443/dl/LynkHubInstaller.apk">Скачать установщик для Android</a>
+      <a class="btn ghost" href="#install">Как установить</a>
+      <a class="btn ghost" href="https://t.me/lynkhubapp">Канал в Telegram</a>
+    </div>
+    <p class="android">Установщик работает только на телефонах с Android. С iPhone установить Lynk Hub нельзя.</p>
   </div>
-  <p class="android">Установщик работает только на телефонах с Android. С iPhone установить Lynk Hub нельзя.</p>
 
   <h2>Что умеет</h2>
   <div class="grid">
@@ -85,10 +87,14 @@
     <li>Готово: на экране машины появится иконка Lynk Hub. Дальше обновления приходят сами.</li>
   </ol>
 
-  <div class="note">
-    <p>Lynk Hub — неофициальное приложение. Оно не связано с Lynk &amp; Co, Geely, Flyme или Яндексом; названия принадлежат их владельцам.</p>
+  <footer>
+    <div class="links">
+      <a href="https://t.me/lynkhubapp">Канал в Telegram</a>
+      <a href="/donate">Поддержать проект</a>
+    </div>
+    <p>Lynk Hub — неофициальное приложение. Не связано с Lynk &amp; Co, Geely, Flyme или Яндексом; названия принадлежат их владельцам.</p>
     <p>Приложение не собирает личные данные. Отчёты об ошибках отправляются без VIN, адресов и координат и только с разрешения владельца.</p>
-  </div>
+  </footer>
 </div>
 </body>
 </html>

@@ -4,18 +4,24 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Поддержать Lynk Hub</title>
-<meta name="description" content="Lynk Hub — бесплатный проект. Поддержать можно по желанию.">
+<meta name="description" content="Lynk Hub — проект, который делается в своё удовольствие. Поддержать можно по желанию.">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <style>
   :root { --bg:#0e0e10; --card:#18181c; --text:#f2f2f4; --dim:#a6a6b0; --accent:#ffbe46; --line:#26262c; }
-  *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--text);
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);
     font:17px/1.6 -apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;}
-  .wrap{max-width:560px;margin:0 auto;padding:40px 22px 72px;}
-  header{display:flex;gap:18px;align-items:center;padding:24px 0 8px}
-  header img{width:64px;height:64px;border-radius:16px}
-  header .nm{font-size:26px;font-weight:700;letter-spacing:-0.4px}
-  a.home{color:var(--dim);text-decoration:none;font-size:15px}
-  h1{font-size:34px;margin:28px 0 14px;letter-spacing:-0.4px}
+  a{color:inherit}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 20px;}
+  .brand{display:flex;align-items:center;gap:12px;padding:24px 0;text-decoration:none;color:var(--text);width:max-content}
+  .brand img{width:44px;height:44px;border-radius:12px}
+  .brand span{font-size:22px;font-weight:700;letter-spacing:-0.3px}
+  footer{border-top:1px solid var(--line);margin-top:8px;padding:28px 0 56px;color:var(--dim);font-size:15px}
+  footer .links{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:16px}
+  footer a{color:var(--text);text-decoration:none}
+  footer p{margin:0 0 8px}
+  .body{max-width:560px;padding:24px 0 44px}
+  h1{font-size:34px;margin:0 0 16px;letter-spacing:-0.4px}
   p{color:var(--dim);margin:0 0 16px}
   .btn{display:inline-block;margin:14px 0 8px;padding:15px 26px;border-radius:14px;font-weight:600;
     text-decoration:none;background:var(--accent);color:#111;font-size:17px}
@@ -24,15 +30,24 @@
 </head>
 <body>
 <div class="wrap">
-  <header>
-    <a href="/"><img src="icon.svg" alt="Lynk Hub"></a>
-    <a href="/" style="text-decoration:none;color:var(--text)"><span class="nm">Lynk Hub</span></a>
-  </header>  <h1>Спасибо, что пользуетесь</h1>
-  <p>Lynk Hub — проект, который делается в своё удовольствие.</p>
-  <p>Если он пригодился и есть желание — можно поддержать. Это совершенно не обязательно, приложение от этого не меняется.</p>
-  <!-- TODO: сюда ссылку DonationAlerts (donationalerts.com/r/<имя>) -->
-  <a class="btn" href="#" id="link">Поддержать</a>
-  <p class="small">Деньги идут на развитие проекта — тесты, сервер, время. Отчётности и обязательств нет.</p>
+  <a class="brand" href="/"><img src="icon.svg" alt=""><span>Lynk Hub</span></a>
+
+  <div class="body">
+    <h1>Спасибо, что пользуетесь</h1>
+    <p>Lynk Hub — проект, который делается в своё удовольствие.</p>
+    <p>Если он пригодился и есть желание — можно поддержать. Это совершенно не обязательно, приложение от этого не меняется.</p>
+    <!-- TODO: сюда ссылку DonationAlerts (donationalerts.com/r/<имя>) -->
+    <a class="btn" href="#" id="link">☕&nbsp;&nbsp;Автору на кофе</a>
+    <p class="small">Деньги идут на развитие проекта — тесты, сервер, время. Отчётности и обязательств нет.</p>
+  </div>
+
+  <footer>
+    <div class="links">
+      <a href="/">На главную</a>
+      <a href="https://t.me/lynkhubapp">Канал в Telegram</a>
+    </div>
+    <p>Lynk Hub — неофициальное приложение. Не связано с Lynk &amp; Co, Geely, Flyme или Яндексом.</p>
+  </footer>
 </div>
 </body>
 </html>
