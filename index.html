@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lynk Hub — панель для Lynk &amp; Co 900</title>
-<meta name="description" content="Lynk Hub — неофициальная плавающая панель для головного устройства Lynk &amp; Co 900: музыка, VPN, приложения, спидометр, пробег и поездки.">
+<title>Lynk Hub — ярлыки, виджеты и сплит для Lynk &amp; Co 900</title>
+<meta name="description" content="Lynk Hub — неофициальное приложение для головного устройства Lynk &amp; Co 900: ярлыки приложений на главном экране, виджеты в стиле Flyme и два приложения на одном экране.">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <style>
   :root { --bg:#0e0e10; --card:#18181c; --text:#f2f2f4; --dim:#a6a6b0; --accent:#ffbe46; --line:#26262c; }
@@ -38,10 +38,9 @@
   .card p{margin:0;color:var(--dim)}
   .card.net{margin-bottom:56px}
   .card .ic{font-size:26px;margin-bottom:10px}
-  .shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-bottom:56px}
-  .shots figure{margin:0}
-  .shots img{width:100%;border-radius:14px;border:1px solid var(--line);display:block;background:#000}
-  .shots figcaption{color:var(--dim);font-size:15px;margin-top:8px;text-align:center}
+  .photo{margin:0 0 56px}
+  .photo img{width:100%;height:auto;border-radius:18px;border:1px solid var(--line);display:block;background:#000}
+  .photo figcaption{color:var(--dim);font-size:15px;margin-top:10px;text-align:center}
   ol.steps{counter-reset:s;list-style:none;padding:0;margin:0 0 56px;display:grid;gap:12px}
   ol.steps li{counter-increment:s;background:var(--card);border:1px solid var(--line);
     border-radius:16px;padding:18px 20px 18px 64px;position:relative}
@@ -56,7 +55,7 @@
 
   <div class="hero">
     <h1>Панель для Lynk &amp; Co 900</h1>
-    <p class="lead">Самое нужное в дороге — в одном касании, крупно и по-русски. Неофициальное приложение.</p>
+    <p class="lead">Ярлыки любых приложений и виджеты прямо на главном экране Flyme, два приложения рядом — крупно и по-русски. Неофициальное приложение.</p>
     <div class="cta">
       <a class="btn main" href="https://reports.lynkhub.ru:8443/dl/LynkHubInstaller.apk">Скачать установщик для Android</a>
       <a class="btn ghost" href="#install">Как установить</a>
@@ -66,27 +65,24 @@
   </div>
 
   <h2>Как выглядит</h2>
-  <div class="shots">
-    <figure><img src="shot-music.jpg" alt="Раздел Музыка"><figcaption>Музыка</figcaption></figure>
-    <figure><img src="shot-car.jpg" alt="Раздел Машина"><figcaption>Машина и поездки</figcaption></figure>
-    <figure><img src="shot-apps.jpg" alt="Раздел Приложения"><figcaption>Приложения</figcaption></figure>
-    <figure><img src="shot-vpn.jpg" alt="Раздел VPN"><figcaption>VPN</figcaption></figure>
-  </div>
+  <figure class="photo">
+    <img src="home.jpg" width="1190" height="609" alt="Главный экран Lynk &amp; Co 900 с ярлыками и виджетами Lynk Hub: поездка, музыка, VPN, спидометр, звонки, недавние приложения">
+    <figcaption>Главный экран машины: ярлыки слева, виджеты Lynk Hub рядом с родными карточками Flyme</figcaption>
+  </figure>
 
   <h2>Что умеет</h2>
   <div class="grid">
-    <div class="card"><div class="ic">🎵</div><h3>Музыка</h3><p>Любой плеер: обложка, листание треков жестом, лайки, строка с треком на проекционном дисплее.</p></div>
-    <div class="card"><div class="ic">🛡️</div><h3>VPN</h3><p>Включение и выключение Happ одним касанием, видно, кто и как держит туннель.</p></div>
-    <div class="card"><div class="ic">🚗</div><h3>Машина</h3><p>Спидометр, запас хода, общий пробег, поворотники и история поездок.</p></div>
-    <div class="card"><div class="ic">▦</div><h3>Приложения</h3><p>Свои плитки с любимыми приложениями — без поиска по меню.</p></div>
+    <div class="card"><div class="ic">▦</div><h3>Ярлыки</h3><p>Иконки любых приложений прямо на главном экране Flyme — расставьте их пальцем где удобно. Плюс быстрые кнопки к экранам машины: массаж, зеркала, шторки люка, HUD и другие — без поиска по меню.</p></div>
+    <div class="card"><div class="ic">◫</div><h3>Виджеты</h3><p>Карточки в стиле Flyme рядом с родными: музыка из любого плеера, VPN в одно касание, спидометр, текущая поездка, недавние приложения, избранные и последние звонки. Ставятся из списка и двигаются по ряду.</p></div>
+    <div class="card"><div class="ic">⧉</div><h3>Сплит</h3><p>Два приложения на одном экране: например, навигатор и музыка или видео. Половины ⅓ и ⅔, поменять местами или развернуть одно на весь экран — с ручки сверху.</p></div>
     <div class="card"><div class="ic">⟳</div><h3>Обновления</h3><p>Сам находит новые версии и ставит их на стоянке, без телефона и компьютера.</p></div>
   </div>
 
   <div class="card net">
     <h3>Что работает без интернета</h3>
-    <p>Спидометр, пробег, запас хода, поездки, плитки приложений и управление музыкой работают всегда.</p>
+    <p>Ярлыки, сплит, спидометр, поездка, звонки и управление музыкой работают всегда.</p>
     <h3 style="margin-top:14px">Где нужен интернет</h3>
-    <p>VPN, обновлениям, отчётам об ошибках и подложке карты нужен интернет в машине — через её собственную связь или раздачу с телефона. Обложки треков тоже подгружаются из сети.</p>
+    <p>VPN, обновлениям и отчётам об ошибках нужен интернет в машине — через её собственную связь или раздачу с телефона. Обложки треков тоже подгружаются из сети.</p>
   </div>
 
   <div class="card net">
